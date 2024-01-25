@@ -5,10 +5,9 @@ import subprocess
 # Get the current date, commit sequence, and image information using subprocess
 day = subprocess.check_output(["date", "+%Y%m%d"]).decode().strip()
 commit_seq = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode().strip()
-image = "arbre"
 
 # Set the log directory using f-string
-logdir = f'OUTPUT/sinddpm-{image}-{day}-{commit_seq}'
+logdir = f'OUTPUT/sinddpm-{day}-{commit_seq}'
 
 # Set the environment variable LOGDIR
 os.environ['LOGDIR'] = logdir
